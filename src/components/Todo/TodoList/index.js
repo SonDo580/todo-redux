@@ -11,10 +11,12 @@ const todoList = [
 
 function TodoList() {
   return (
-    <div>
-      {todoList.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} />
-      ))}
+    <div style={{ height: "50%" }}>
+      <div style={{ height: "80%" }}>
+        {todoList.map((todo) => (
+          <TodoItem key={todo.id} todo={todo} />
+        ))}
+      </div>
 
       <TodoAdd />
     </div>
