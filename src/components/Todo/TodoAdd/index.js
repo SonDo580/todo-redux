@@ -19,6 +19,10 @@ function TodoAdd() {
   };
 
   const handleClick = () => {
+    if (task.trim() === "") {
+      return alert("Task must be provided");
+    }
+
     dispatch(
       addTodo({
         id: uuidv4(),
