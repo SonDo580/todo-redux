@@ -1,10 +1,17 @@
 import { Button, Input, Select, Tag } from "antd";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import { addTodo } from "../../../redux/actions";
 
 function TodoAdd() {
   const dispatch = useDispatch();
+
+  const [task, setTask] = useState("");
+
+  const handleInputChange = (event) => {
+    setTask(event.target.value);
+  };
 
   const handleClick = () => {
     dispatch(
@@ -19,7 +26,7 @@ function TodoAdd() {
 
   return (
     <Input.Group style={{ display: "flex" }} compact>
-      <Input placeholder="new task" />
+      <Input placeholder="new task" value={task} onChange={handleInputChange} />
 
       <Select defaultValue="Medium">
         <Select.Option value="High" label="High">
