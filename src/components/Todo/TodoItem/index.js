@@ -9,7 +9,7 @@ const priorityColorMapping = {
 
 function TodoItem(props) {
   const {
-    todo: { title, priority },
+    todo: { task, priority },
   } = props;
 
   const [checked, setChecked] = useState(false);
@@ -26,7 +26,7 @@ function TodoItem(props) {
         ...(checked ? { opacity: 0.5, textDecoration: "line-through" } : {}),
       }}
     >
-      <Checkbox onChange={toggleCheckbox}>{title}</Checkbox>
+      <Checkbox onChange={toggleCheckbox}>{task}</Checkbox>
       <Tag color={priorityColorMapping[priority]}>{priority}</Tag>
     </Row>
   );

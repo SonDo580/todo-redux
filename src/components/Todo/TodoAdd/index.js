@@ -17,7 +17,7 @@ function TodoAdd() {
     dispatch(
       addTodo({
         id: uuidv4(),
-        title: "Test",
+        task,
         priority: "High",
         completed: false,
       })
