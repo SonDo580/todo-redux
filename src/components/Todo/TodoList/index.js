@@ -1,3 +1,4 @@
+import TodoAdd from "../TodoAdd";
 import TodoItem from "../TodoItem";
 
 const todoList = [
@@ -14,6 +15,8 @@ function TodoList() {
       {todoList.map((todo) => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
+
+      <TodoAdd />
     </div>
   );
 }
