@@ -12,7 +12,7 @@ const todoList = [
 function TodoList() {
   return (
     <div style={{ height: "50%" }}>
-      <div style={{ height: "80%" }}>
+      <div style={{ height: "80%", overflow: "auto" }}>
         {todoList.map((todo) => (
           <TodoItem key={todo.id} todo={todo} />
         ))}
