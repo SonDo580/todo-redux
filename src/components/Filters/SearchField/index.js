@@ -9,6 +9,10 @@ function SearchField() {
     setSearchText(event.target.value);
   };
 
+  const handleSearch = (searchText) => {
+    console.log(searchText);
+  };
+
   return (
     <div>
       <Typography.Paragraph
@@ -20,6 +24,7 @@ function SearchField() {
         placeholder="input search text"
         value={searchText}
         onChange={handleSearchTextChange}
+        onSearch={handleSearch}
       />
     </div>
   );
