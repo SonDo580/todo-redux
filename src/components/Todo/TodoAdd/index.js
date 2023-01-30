@@ -8,17 +8,22 @@ function TodoAdd() {
   const dispatch = useDispatch();
 
   const [task, setTask] = useState("");
+  const [priority, setPriority] = useState("Medium");
 
   const handleInputChange = (event) => {
     setTask(event.target.value);
+  };
+
+  const handlePriorityChange = (value) => {
+    setPriority(value);
   };
 
   const handleClick = () => {
     dispatch(
       addTodo({
         id: uuidv4(),
-        task,
-        priority: "High",
+        task: task,
+        priority: priority,
         completed: false,
       })
     );
@@ -28,7 +33,7 @@ function TodoAdd() {
     <Input.Group style={{ display: "flex" }} compact>
       <Input placeholder="new task" value={task} onChange={handleInputChange} />
 
-      <Select defaultValue="Medium">
+      <Select value={priority} onChange={handlePriorityChange}>
         <Select.Option value="High" label="High">
           <Tag color="red">High</Tag>
         </Select.Option>
