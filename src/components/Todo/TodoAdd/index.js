@@ -1,5 +1,6 @@
 import { Button, Input, Select, Tag } from "antd";
 import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 import { addTodo } from "../../../redux/actions";
 
 function TodoAdd() {
@@ -7,7 +8,12 @@ function TodoAdd() {
 
   const handleClick = () => {
     dispatch(
-      addTodo({ id: 1000, title: "Test", priority: "High", completed: false })
+      addTodo({
+        id: uuidv4(),
+        title: "Test",
+        priority: "High",
+        completed: false,
+      })
     );
   };
 
