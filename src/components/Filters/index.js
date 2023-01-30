@@ -1,3 +1,4 @@
+import PriorityFilter from "./PriorityFilter";
 import SearchField from "./SearchField";
 import StatusFilter from "./StatusFilter";
 
@@ -6,6 +7,7 @@ function Filters() {
     <>
       <SearchField />
       <StatusFilter />
+      <PriorityFilter />
     </>
   );
 }
