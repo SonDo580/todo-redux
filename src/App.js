@@ -1,3 +1,4 @@
+import "./App.css";
 import { Typography } from "antd";
 
 const { Title } = Typography;
