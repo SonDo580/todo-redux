@@ -9,10 +9,10 @@ const priorityColorMapping = {
 
 function TodoItem(props) {
   const {
-    todo: { task, priority },
+    todo: { task, priority, completed },
   } = props;
 
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(completed);
 
   const toggleCheckbox = () => {
     setChecked((prevChecked) => !prevChecked);
