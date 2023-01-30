@@ -1,5 +1,11 @@
+import SearchField from "./SearchField";
+
 function Filters() {
-  return <div>Filters</div>;
+  return (
+    <div>
+      <SearchField />
+    </div>
+  );
 }
 
 export default Filters;
