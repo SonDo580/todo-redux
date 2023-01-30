@@ -31,6 +31,9 @@ function TodoAdd() {
         completed: false,
       })
     );
+
+    setTask("");
+    setPriority("Medium");
   };
 
   return (
