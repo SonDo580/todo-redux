@@ -4,7 +4,7 @@ const initialState = {
     status: "All",
     priority: [],
   },
-  todoList: [
+  todos: [
     { id: 1, title: "Learn React", priority: "High", completed: true },
     { id: 2, title: "Learn Express", priority: "High", completed: false },
     { id: 3, title: "Learn Redux", priority: "Medium", completed: true },
