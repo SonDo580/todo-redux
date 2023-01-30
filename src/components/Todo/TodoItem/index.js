@@ -26,7 +26,9 @@ function TodoItem(props) {
         ...(checked ? { opacity: 0.5, textDecoration: "line-through" } : {}),
       }}
     >
-      <Checkbox onChange={toggleCheckbox}>{task}</Checkbox>
+      <Checkbox checked={checked} onChange={toggleCheckbox}>
+        {task}
+      </Checkbox>
       <Tag color={priorityColorMapping[priority]}>{priority}</Tag>
     </Row>
   );
