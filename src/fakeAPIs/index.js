@@ -1,7 +1,11 @@
-import { createServer } from "miragejs";
+import { createServer, Model } from "miragejs";
 
 export function setupServer() {
-  let server = createServer();
+  let server = createServer({
+    models: {
+      todo: Model,
+    },
+  });
 
   server.namespace = "api";
 
