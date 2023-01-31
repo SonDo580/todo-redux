@@ -3,7 +3,7 @@ import { createSelector } from "reselect";
 const todoListSelector = (state) => state.todos;
 const searchTextSelector = (state) => state.filters.search;
 
-export const todosRemainingSelector = createSelector(
+export const todosRemainSelector = createSelector(
   todoListSelector,
   searchTextSelector,
   (todoList, searchText) => {
