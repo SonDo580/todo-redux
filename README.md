@@ -5,8 +5,10 @@ A simple app to manage todo list
 # Features
 
 - Add new task
-- Searching
-- Filtering
+- Complete a task
+- Search
+- Filter by status
+- Filter by priority
 
 # Technology
 
