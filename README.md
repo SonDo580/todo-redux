@@ -20,4 +20,4 @@ http://sondo-todo-redux.surge.sh/
 - Redux
 - Ant Design
 
-# The project is based on a tutorial from HoleTex channel
+# The project is from a tutorial on HoleTex channel
