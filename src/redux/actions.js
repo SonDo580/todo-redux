@@ -1,5 +1,6 @@
 import {
   ADD_TODO,
+  COMPLETE_TODO,
   PRIORITY_FILTER,
   SEARCH_TODO,
   STATUS_FILTER,
@@ -8,6 +9,11 @@ import {
 export const addTodo = (todo) => ({
   type: ADD_TODO,
   payload: todo,
+});
+
+export const completeTodo = (todoID) => ({
+  type: COMPLETE_TODO,
+  payload: todoID,
 });
 
 export const searchTodo = (searchText) => ({
