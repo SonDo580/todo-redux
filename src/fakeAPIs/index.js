@@ -17,8 +17,9 @@ export function setupServer() {
       });
 
       this.put("/todo/:id", (schema, request) => {
-        const currentTodo = schema.find(request.params.id);
-        currentTodo.completed = !currentTodo.completed;
+        const payload = JSON.parse(request.requestBody);
+        const currentTodo = schema.todos.find(request.params.id);
+        currentTodo.update(payload);
       });
     },
   });
