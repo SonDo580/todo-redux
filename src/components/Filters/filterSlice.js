@@ -20,6 +20,6 @@ const filterSlice = createSlice({
   },
 });
 
-const { reducer, actions } = filterSlice;
-export const { searchTodo, filterByStatus, filterByPriority } = actions;
-export default reducer;
+export const { searchTodo, filterByStatus, filterByPriority } =
+  filterSlice.actions;
+export default filterSlice.reducer;

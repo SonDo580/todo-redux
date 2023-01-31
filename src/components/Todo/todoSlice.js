@@ -22,6 +22,5 @@ const todoSlice = createSlice({
   },
 });
 
-const { reducer, actions } = todoSlice;
-export const { addTodo, toggleStatus } = actions;
-export default reducer;
+export const { addTodo, toggleStatus } = todoSlice.actions;
+export default todoSlice.reducer;
