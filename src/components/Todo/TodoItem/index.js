@@ -1,5 +1,7 @@
 import { Checkbox, Row, Tag } from "antd";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { completeTodo } from "../../../redux/actions";
 
 const priorityColorMapping = {
   High: "red",
@@ -8,14 +10,17 @@ const priorityColorMapping = {
 };
 
 function TodoItem(props) {
+  const dispatch = useDispatch();
+
   const {
-    todo: { task, priority, completed },
+    todo: { task, priority, completed, id },
   } = props;
 
   const [checked, setChecked] = useState(completed);
 
   const toggleCheckbox = () => {
     setChecked((prevChecked) => !prevChecked);
+    dispatch(completeTodo(id));
   };
 
   return (
