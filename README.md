@@ -19,5 +19,6 @@ http://sondo-todo-redux.surge.sh/
 - React
 - Redux
 - Ant Design
+- Mirage
 
 # The project is from a tutorial on HoleTex channel
