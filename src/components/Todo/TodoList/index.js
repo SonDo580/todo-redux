@@ -6,9 +6,9 @@ function TodoList() {
   const todoList = useSelector((state) => state.todos);
   const searchText = useSelector((state) => state.filters.search);
 
-  const todoRemain = searchText
-    ? todoList.filter((todo) => todo.task.toLowerCase().includes(searchText))
-    : todoList;
+  const todoRemain = todoList.filter((todo) =>
+    todo.task.toLowerCase().includes(searchText)
+  );
 
   return (
     <div style={{ height: "50%" }}>
