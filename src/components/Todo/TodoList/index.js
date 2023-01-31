@@ -4,11 +4,16 @@ import TodoItem from "../TodoItem";
 
 function TodoList() {
   const todoList = useSelector((state) => state.todos);
+  const searchText = useSelector((state) => state.filters.search);
+
+  const todoRemain = searchText
+    ? todoList.filter((todo) => todo.task.includes(searchText))
+    : todoList;
 
   return (
     <div style={{ height: "50%" }}>
       <div style={{ height: "80%", overflow: "auto" }}>
-        {todoList.map((todo) => (
+        {todoRemain.map((todo) => (
           <TodoItem key={todo.id} todo={todo} />
         ))}
       </div>
