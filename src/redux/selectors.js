@@ -22,6 +22,11 @@ export const todosRemainSelector = createSelector(
           return !todo.completed;
         }
       })
-      .filter((todo) => priorityFilter.includes(todo.priority));
+      .filter((todo) => {
+        if (priorityFilter.length === 0) {
+          return true;
+        }
+        return priorityFilter.includes(todo.priority);
+      });
   }
 );
