@@ -23,7 +23,7 @@ const rootReducer = (state = initialState, action) => {
     case SEARCH_TODO:
       return {
         ...state,
-        filters: { ...state.filters, search: action.payload },
+        filters: { ...state.filters, search: action.payload.toLowerCase() },
       };
 
     default:

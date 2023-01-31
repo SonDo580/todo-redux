@@ -7,7 +7,7 @@ function TodoList() {
   const searchText = useSelector((state) => state.filters.search);
 
   const todoRemain = searchText
-    ? todoList.filter((todo) => todo.task.includes(searchText))
+    ? todoList.filter((todo) => todo.task.toLowerCase().includes(searchText))
     : todoList;
 
   return (
