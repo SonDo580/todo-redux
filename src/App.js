@@ -5,7 +5,9 @@ import TodoList from "./components/Todo/TodoList";
 import { setupServer } from "./fakeAPIs";
 const { Title } = Typography;
 
+// if (process.env.NODE_ENV === 'development') {
 setupServer();
+// }
 
 function App() {
   return (
