@@ -1,21 +1,15 @@
 import { createServer, Model } from "miragejs";
 
 export function setupServer() {
-  let server = createServer({
+  createServer({
     models: {
       todo: Model,
     },
-  });
 
-  server.namespace = "api";
+    routes() {
+      this.namespace = "api";
 
-  server.get("/todos", {
-    todos: [
-      { id: 1, task: "Learn React", priority: "High", completed: true },
-      { id: 2, task: "Learn Express", priority: "High", completed: false },
-      { id: 3, task: "Learn Redux", priority: "Medium", completed: true },
-      { id: 4, task: "Learn Firebase", priority: "Medium", completed: false },
-      { id: 5, task: "Learn Networking", priority: "Low", completed: false },
-    ],
+      this.get("/todos", (schema) => schema.todos.all());
+    },
   });
 }
