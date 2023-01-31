@@ -1,5 +1,4 @@
 import { Select, Typography } from "antd";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { filterByPriority } from "../../../redux/actions";
 
@@ -21,10 +20,7 @@ const options = [
 function PriorityFilter() {
   const dispatch = useDispatch();
 
-  const [priorities, setPriorities] = useState([]);
-
   const handlePriorityChange = (value) => {
-    setPriorities(value);
     dispatch(filterByPriority(value));
   };
 
@@ -40,7 +36,6 @@ function PriorityFilter() {
         mode="multiple"
         style={{ width: "100%" }}
         options={options}
-        value={priorities}
         onChange={handlePriorityChange}
       ></Select>
     </div>
