@@ -11,22 +11,22 @@ export const todosRemainSelector = createSelector(
   statusFilterSelector,
   priorityFilterSelector,
   (todoList, searchText, statusFilter, priorityFilter) => {
-    return todoList
-      .filter((todo) => todo.task.toLowerCase().includes(searchText))
-      .filter((todo) => {
-        if (statusFilter === "All") {
-          return true;
-        } else if (statusFilter === "Completed") {
-          return todo.completed;
-        } else {
-          return !todo.completed;
-        }
-      })
-      .filter((todo) => {
-        if (priorityFilter.length === 0) {
-          return true;
-        }
-        return priorityFilter.includes(todo.priority);
-      });
+    return todoList.filter((todo) => {
+      const containSearchText = todo.task.toLowerCase().includes(searchText);
+
+      const meetStatusCondition =
+        statusFilter === "All"
+          ? true
+          : statusFilter === "Completed"
+          ? todo.completed
+          : !todo.completed;
+
+      const meetPriorityCondition =
+        priorityFilter.length === 0
+          ? true
+          : priorityFilter.includes(todo.priority);
+
+      return containSearchText && meetStatusCondition && meetPriorityCondition;
+    });
   }
 );
