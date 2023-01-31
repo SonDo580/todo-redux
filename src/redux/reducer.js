@@ -1,4 +1,4 @@
-import { ADD_TODO } from "./actionTypes";
+import { ADD_TODO, SEARCH_TODO } from "./actionTypes";
 
 const initialState = {
   filters: {
@@ -19,6 +19,12 @@ const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
       return { ...state, todos: [...state.todos, action.payload] };
+
+    case SEARCH_TODO:
+      return {
+        ...state,
+        filters: { ...state.filters, search: action.payload },
+      };
 
     default:
       return state;
