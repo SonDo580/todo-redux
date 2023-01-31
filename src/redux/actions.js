@@ -1,6 +1,6 @@
 import {
   ADD_TODO,
-  COMPLETE_TODO,
+  TOGGLE_STATUS,
   PRIORITY_FILTER,
   SEARCH_TODO,
   STATUS_FILTER,
@@ -11,8 +11,8 @@ export const addTodo = (todo) => ({
   payload: todo,
 });
 
-export const completeTodo = (todoID) => ({
-  type: COMPLETE_TODO,
+export const toggleStatus = (todoID) => ({
+  type: TOGGLE_STATUS,
   payload: todoID,
 });
 

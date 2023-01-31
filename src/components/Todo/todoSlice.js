@@ -1,4 +1,4 @@
-import { ADD_TODO, COMPLETE_TODO } from "../../redux/actionTypes";
+import { ADD_TODO, TOGGLE_STATUS } from "../../redux/actionTypes";
 
 const initialState = [
   { id: 1, task: "Learn React", priority: "High", completed: true },
@@ -13,7 +13,7 @@ const todoReducer = (state = initialState, action) => {
     case ADD_TODO:
       return [...state, action.payload];
 
-    case COMPLETE_TODO:
+    case TOGGLE_STATUS:
       return state.map((todo) => {
         if (todo.id === action.payload) {
           return { ...todo, completed: !todo.completed };
