@@ -2,6 +2,10 @@
 
 A simple app to manage todo list
 
+# Live Preview
+
+http://sondo-todo-redux.surge.sh/
+
 # Features
 
 - Add new task
