@@ -1,4 +1,9 @@
-import { ADD_TODO, SEARCH_TODO, STATUS_FILTER } from "./actionTypes";
+import {
+  ADD_TODO,
+  PRIORITY_FILTER,
+  SEARCH_TODO,
+  STATUS_FILTER,
+} from "./actionTypes";
 
 export const addTodo = (todo) => ({
   type: ADD_TODO,
@@ -13,4 +18,9 @@ export const searchTodo = (searchText) => ({
 export const filterByStatus = (status) => ({
   type: STATUS_FILTER,
   payload: status,
+});
+
+export const filterByPriority = (priorities) => ({
+  type: PRIORITY_FILTER,
+  payload: priorities,
 });
