@@ -1,8 +1,12 @@
 import { Input, Typography } from "antd";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { searchTodo } from "../../../redux/actions";
 const { Search } = Input;
 
 function SearchField() {
+  const dispatch = useDispatch();
+
   const [searchText, setSearchText] = useState("");
 
   const handleSearchTextChange = (event) => {
@@ -10,7 +14,7 @@ function SearchField() {
   };
 
   const handleSearch = (searchText) => {
-    console.log(searchText);
+    dispatch(searchTodo(searchText));
   };
 
   return (
