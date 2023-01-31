@@ -13,7 +13,12 @@ export function setupServer() {
 
       this.post("/todos", (schema, request) => {
         const payload = JSON.parse(request.requestBody);
-        return schema.todos.create(payload);
+        schema.todos.create(payload);
+      });
+
+      this.put("/todo/:id", (schema, request) => {
+        const currentTodo = schema.find(request.params.id);
+        currentTodo.completed = !currentTodo.completed;
       });
     },
   });
