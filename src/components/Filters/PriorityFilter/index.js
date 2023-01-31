@@ -1,6 +1,6 @@
 import { Select, Typography } from "antd";
 import { useDispatch } from "react-redux";
-import { filterByPriority } from "../../../redux/actions";
+import { filterByPriority } from "../filterSlice";
 
 const options = [
   {

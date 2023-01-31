@@ -1,6 +1,6 @@
 import { Radio, Typography } from "antd";
 import { useDispatch } from "react-redux";
-import { filterByStatus } from "../../../redux/actions";
+import { filterByStatus } from "../filterSlice";
 
 function StatusFilter() {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import { Input, Typography } from "antd";
 import { useDispatch } from "react-redux";
-import { searchTodo } from "../../../redux/actions";
+import { searchTodo } from "../filterSlice";
 const { Search } = Input;
 
 function SearchField() {
