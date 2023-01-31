@@ -25,7 +25,6 @@ function SearchField() {
         placeholder="input search text"
         value={searchText}
         onChange={handleSearchTextChange}
-        onSearch={handleSearch}
       />
     </div>
   );
