@@ -1,4 +1,4 @@
-import { ADD_TODO } from "./actionTypes";
+import { ADD_TODO } from "../../redux/actionTypes";
 
 const initialState = [
   { id: 1, task: "Learn React", priority: "High", completed: true },

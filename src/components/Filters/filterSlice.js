@@ -1,4 +1,4 @@
-import { SEARCH_TODO } from "./actionTypes";
+import { SEARCH_TODO } from "../../redux/actionTypes";
 
 const initialState = {
   search: "",
