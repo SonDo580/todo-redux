@@ -1,4 +1,8 @@
-import { SEARCH_TODO, STATUS_FILTER } from "../../redux/actionTypes";
+import {
+  PRIORITY_FILTER,
+  SEARCH_TODO,
+  STATUS_FILTER,
+} from "../../redux/actionTypes";
 
 const initialState = {
   search: "",
@@ -18,6 +22,12 @@ const filterReducer = (state = initialState, action) => {
       return {
         ...state,
         status: action.payload,
+      };
+
+    case PRIORITY_FILTER:
+      return {
+        ...state,
+        priority: action.payload,
       };
 
     default:
