@@ -1,11 +1,16 @@
 import { Radio, Typography } from "antd";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { filterByStatus } from "../../../redux/actions";
 
 function StatusFilter() {
+  const dispatch = useDispatch();
+
   const [status, setStatus] = useState("All");
 
   const handleStatusChange = (event) => {
     setStatus(event.target.value);
+    dispatch(filterByStatus(event.target.value));
   };
 
   return (
