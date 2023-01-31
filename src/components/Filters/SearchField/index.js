@@ -11,10 +11,7 @@ function SearchField() {
 
   const handleSearchTextChange = (event) => {
     setSearchText(event.target.value);
-  };
-
-  const handleSearch = (searchText) => {
-    dispatch(searchTodo(searchText));
+    dispatch(searchTodo(event.target.value));
   };
 
   return (
