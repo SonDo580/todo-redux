@@ -57,13 +57,13 @@ export const addTodoThunk = createAsyncThunk(
 
 export const toggleStatusThunk = createAsyncThunk(
   "todos/toggleStatusThunk",
-  async (todo) => {
-    const res = await fetch(`api/todo/${todo.id}`, {
+  async (id) => {
+    const res = await fetch(`api/todo/${id}`, {
       method: "PUT",
-      body: JSON.stringify(todo),
     });
 
-    console.log(res);
+    const data = await res.json();
+    return data.todo;
   }
 );
 
