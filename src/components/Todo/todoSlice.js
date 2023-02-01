@@ -47,7 +47,8 @@ export const addTodoThunk = createAsyncThunk(
       body: JSON.stringify(todo),
     });
 
-    console.log(res);
+    const data = await res.json();
+    return data.todo;
   }
 );
 
