@@ -12,16 +12,16 @@ const todoSlice = createSlice({
         state.todoList = action.payload;
         state.status = "idle";
       })
-      .addCase(addTodoThunk.pending, (state, action) => {
+      .addCase(addTodo.pending, (state, action) => {
         state.status = "loading";
       })
-      .addCase(addTodoThunk.fulfilled, (state, action) => {
+      .addCase(addTodo.fulfilled, (state, action) => {
         state.todoList.push(action.payload);
       })
-      .addCase(toggleStatusThunk.pending, (state, action) => {
+      .addCase(toggleTodoStatus.pending, (state, action) => {
         state.status = "loading";
       })
-      .addCase(toggleStatusThunk.fulfilled, (state, action) => {
+      .addCase(toggleTodoStatus.fulfilled, (state, action) => {
         const currentTodo = state.todoList.find(
           (todo) => todo.id === action.payload
         );
@@ -36,21 +36,18 @@ export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
   return data.todos;
 });
 
-export const addTodoThunk = createAsyncThunk(
-  "todos/addTodoThunk",
-  async (todo) => {
-    const res = await fetch("api/todos", {
-      method: "POST",
-      body: JSON.stringify(todo),
-    });
+export const addTodo = createAsyncThunk("todos/addTodo", async (todo) => {
+  const res = await fetch("api/todos", {
+    method: "POST",
+    body: JSON.stringify(todo),
+  });
 
-    const data = await res.json();
-    return data.todo;
-  }
-);
+  const data = await res.json();
+  return data.todo;
+});
 
-export const toggleStatusThunk = createAsyncThunk(
-  "todos/toggleStatusThunk",
+export const toggleTodoStatus = createAsyncThunk(
+  "todos/toggleTodoStatus",
   async (id) => {
     const res = await fetch(`api/todo/${id}`, {
       method: "PUT",
@@ -61,5 +58,4 @@ export const toggleStatusThunk = createAsyncThunk(
   }
 );
 
-export const { addTodo, toggleStatus } = todoSlice.actions;
 export default todoSlice.reducer;
