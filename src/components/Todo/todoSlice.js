@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
   { id: 1, task: "Learn React", priority: "High", completed: true },
@@ -20,6 +20,11 @@ const todoSlice = createSlice({
       currentTodo.completed = !currentTodo.completed;
     },
   },
+});
+
+export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
+  const res = await fetch("/api/todos");
+  console.log(res);
 });
 
 export const { addTodo, toggleStatus } = todoSlice.actions;
