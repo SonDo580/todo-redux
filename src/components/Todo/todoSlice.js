@@ -30,8 +30,14 @@ const todoSlice = createSlice({
         state.todoList = action.payload;
         state.status = "idle";
       })
+      .addCase(addTodoThunk.pending, (state, action) => {
+        state.status = "loading";
+      })
       .addCase(addTodoThunk.fulfilled, (state, action) => {
         state.todoList.push(action.payload);
+      })
+      .addCase(toggleStatusThunk.pending, (state, action) => {
+        state.status = "loading";
       })
       .addCase(toggleStatusThunk.fulfilled, (state, action) => {
         const currentTodo = state.todoList.find(
