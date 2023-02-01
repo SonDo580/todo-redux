@@ -29,6 +29,9 @@ const todoSlice = createSlice({
       .addCase(fetchTodos.fulfilled, (state, action) => {
         state.todos = action.payload;
         state.status = "idle";
+      })
+      .addCase(addTodoThunk.fulfilled, (state, action) => {
+        state.todoList.push(action.payload);
       });
   },
 });
