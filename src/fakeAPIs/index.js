@@ -19,7 +19,7 @@ export function setupServer() {
       this.put("/todo/:id", (schema, request) => {
         const payload = JSON.parse(request.requestBody);
         const currentTodo = schema.todos.find(request.params.id);
-        currentTodo.update(payload);
+        return currentTodo.update(payload);
       });
     },
   });
