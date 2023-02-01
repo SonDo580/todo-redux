@@ -1,13 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-// const initialState = [
-//   { id: 1, task: "Learn React", priority: "High", completed: true },
-//   { id: 2, task: "Learn Express", priority: "High", completed: false },
-//   { id: 3, task: "Learn Redux", priority: "Medium", completed: true },
-//   { id: 4, task: "Learn Firebase", priority: "Medium", completed: false },
-//   { id: 5, task: "Learn Networking", priority: "Low", completed: false },
-// ];
-
 const todoSlice = createSlice({
   name: "todos",
   initialState: { status: "idle", todoList: [] },
