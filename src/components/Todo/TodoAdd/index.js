@@ -2,7 +2,7 @@ import { Button, Input, Select, Tag } from "antd";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { addTodo } from "../todoSlice";
+import { addTodo, addTodoThunk } from "../todoSlice";
 
 function TodoAdd() {
   const dispatch = useDispatch();
@@ -24,7 +24,13 @@ function TodoAdd() {
     }
 
     dispatch(
-      addTodo({
+      // addTodo({
+      //   id: uuidv4(),
+      //   task: task,
+      //   priority: priority,
+      //   completed: false,
+      // })
+      addTodoThunk({
         id: uuidv4(),
         task: task,
         priority: priority,
