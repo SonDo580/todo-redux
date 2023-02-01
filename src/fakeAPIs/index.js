@@ -13,7 +13,7 @@ export function setupServer() {
 
       this.post("/todos", (schema, request) => {
         const payload = JSON.parse(request.requestBody);
-        schema.todos.create(payload);
+        return schema.todos.create(payload);
       });
 
       this.put("/todo/:id", (schema, request) => {
