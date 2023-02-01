@@ -20,14 +20,7 @@ function TodoItem(props) {
 
   const toggleCheckbox = () => {
     setChecked((prevChecked) => !prevChecked);
-    dispatch(
-      toggleStatusThunk({
-        id,
-        task,
-        priority,
-        completed: !completed,
-      })
-    );
+    dispatch(toggleStatusThunk(id));
   };
 
   return (
