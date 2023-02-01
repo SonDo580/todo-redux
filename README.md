@@ -4,7 +4,7 @@ A simple app to manage todo list
 
 # Live Preview
 
-https://sondo-todo-redux.netlify.app/
+http://sondo-todo-redux.surge.sh/
 
 # Features
 
