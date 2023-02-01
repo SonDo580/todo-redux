@@ -27,14 +27,16 @@ const todoSlice = createSlice({
         state.status = "loading";
       })
       .addCase(fetchTodos.fulfilled, (state, action) => {
-        state.todos = action.payload;
+        state.todoList = action.payload;
         state.status = "idle";
       })
       .addCase(addTodoThunk.fulfilled, (state, action) => {
         state.todoList.push(action.payload);
       })
       .addCase(toggleStatusThunk.fulfilled, (state, action) => {
-        const currentTodo = state.find((todo) => todo.id === action.payload);
+        const currentTodo = state.todoList.find(
+          (todo) => todo.id === action.payload
+        );
         currentTodo.completed = !currentTodo.completed;
       });
   },
