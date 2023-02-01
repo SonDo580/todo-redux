@@ -39,5 +39,17 @@ export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
   return data.todos;
 });
 
+export const addTodoThunk = createAsyncThunk(
+  "todos/addTodoThunk",
+  async (todo) => {
+    const res = await fetch("api/todos", {
+      method: "POST",
+      body: JSON.stringify(todo),
+    });
+
+    console.log(res);
+  }
+);
+
 export const { addTodo, toggleStatus } = todoSlice.actions;
 export default todoSlice.reducer;
