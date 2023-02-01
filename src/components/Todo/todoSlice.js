@@ -20,6 +20,10 @@ const todoSlice = createSlice({
       currentTodo.completed = !currentTodo.completed;
     },
   },
+
+  extraReducers: (builder) => {
+    builder.addCase(fetchTodos.pending, (state, action) => {});
+  },
 });
 
 export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
