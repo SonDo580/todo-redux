@@ -35,7 +35,8 @@ const todoSlice = createSlice({
 
 export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
   const res = await fetch("/api/todos");
-  console.log(res);
+  const data = await res.json();
+  return data.todos;
 });
 
 export const { addTodo, toggleStatus } = todoSlice.actions;
