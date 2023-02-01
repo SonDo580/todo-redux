@@ -22,7 +22,9 @@ const todoSlice = createSlice({
   },
 
   extraReducers: (builder) => {
-    builder.addCase(fetchTodos.pending, (state, action) => {});
+    builder.addCase(fetchTodos.pending, (state, action) => {
+      state.status = "loading";
+    });
   },
 });
 
