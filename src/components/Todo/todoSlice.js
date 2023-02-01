@@ -32,6 +32,10 @@ const todoSlice = createSlice({
       })
       .addCase(addTodoThunk.fulfilled, (state, action) => {
         state.todoList.push(action.payload);
+      })
+      .addCase(toggleStatusThunk.fulfilled, (state, action) => {
+        const currentTodo = state.find((todo) => todo.id === action.payload);
+        currentTodo.completed = !currentTodo.completed;
       });
   },
 });
@@ -63,7 +67,7 @@ export const toggleStatusThunk = createAsyncThunk(
     });
 
     const data = await res.json();
-    return data.todo;
+    return data.todo.id;
   }
 );
 
