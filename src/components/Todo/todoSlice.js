@@ -11,16 +11,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const todoSlice = createSlice({
   name: "todos",
   initialState: { status: "idle", todoList: [] },
-  reducers: {
-    addTodo: (state, action) => {
-      state.push(action.payload);
-    },
-    toggleStatus: (state, action) => {
-      const currentTodo = state.find((todo) => todo.id === action.payload);
-      currentTodo.completed = !currentTodo.completed;
-    },
-  },
-
   extraReducers: (builder) => {
     builder
       .addCase(fetchTodos.pending, (state, action) => {
