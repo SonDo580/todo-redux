@@ -1,6 +1,6 @@
 # To-Do App
 
-A simple app to manage todo list
+A simple app to manage todo list (from HoleTex youtube channel)
 
 # Live Preview
 
@@ -20,5 +20,3 @@ http://sondo-todo-redux.surge.sh/
 - Redux
 - Ant Design
 - Mirage
-
-# The project is from a tutorial on HoleTex channel
